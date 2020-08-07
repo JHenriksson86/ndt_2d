@@ -1,0 +1,33 @@
+
+<launch>
+
+  <arg name="pcd_path" default="/home/johan/Documents/Sommarjobb/data/middle_green" /> 
+
+  <node name="rviz" pkg="rviz" type="rviz" 
+    args="-d $(find ndt_eval)/launch/registration_result.rviz"
+  />
+
+  <node name="ndt_service_node" pkg="ndt_2d" type="ndt_service_node" output = "screen" />
+
+  <node pkg="ndt_eval" type="ndt_eval_node" name="ndt_eval_node" output="screen">
+    <param name="pcd_path" value="$(arg pcd_path)/"/>
+    <param name="pcd_name" value="cloud"/>
+    <param name="pcd_start_number" value="0"/>
+    <param name="pcd_stop_number" value="445"/>
+    <param name="pcd_step_size" value="1"/>
+    <param name="odometry_file" value="$(arg pcd_path)/odom.txt"/>
+    <param name="output_file" value="$(arg pcd_path)/ndt_200730-1.txt"/>
+    <param name="initial_guess" value="false"/>
+
+    <param name="scanner_posx" value="0.0" />
+    <param name="scanner_posy" value="0.0" />
+    <param name="scanner_posz" value="0.0" />
+    <param name="scanner_rotx" value="0.0" />
+    <param name="scanner_roty" value="0.0" />
+    <param name="scanner_rotz" value="0.0" />
+
+    <param name="map_cell_size" value="1.5" />
+    <param name="map_cell_count" value="200" />
+  </node>
+
+</launch>

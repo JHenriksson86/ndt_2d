@@ -1,0 +1,6 @@
+sensor_msgs/PointCloud2 fixed_cloud
+sensor_msgs/PointCloud2 movable_cloud
+geometry_msgs/Transform initial_guess
+ndt_msgs/NDT2dParameters parameters
+---
+geometry_msgs/Transform result

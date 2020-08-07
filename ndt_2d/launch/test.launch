@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="map_test" pkg="ndt_2d" type="map_test" output="screen"></node>
+    <node name="math_test" pkg="ndt_2d" type="math_test" output="screen"></node>
+    <node name="scan_test" pkg="ndt_2d" type="scan_test" output="screen"></node>
+</launch>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="ndt_2d_test_registration_node" pkg="ndt_2d" type="ndt_2d_test_registration_node" 
+         output="screen">
+        <param name="cost_function" type="int" value="1" />
+        <param name="cell_count" type="int" value="40" />
+        <param name="cell_size" type="double" value="2.0" />
+        <param name="x_min" type="double" value="-0.5" />
+        <param name="x_max" type="double" value="0.5" />
+        <param name="range_size_x" type="int" value="10" />
+        <param name="y_min" type="double" value="-0.5" />
+        <param name="y_max" type="double" value="0.5" />
+        <param name="range_size_y" type="int" value="10" />
+        <param name="rz_min" type="double" value="-0.5" />
+        <param name="rz_max" type="double" value="0.5" />
+        <param name="range_size_rz" type="int" value="10" />
+        <param name="scan_file_path" value="$(find ndt_2d)" />
+        <param name="result_path" value="$(find ndt_2d)" />
+        <param name="result_filename" value="step" />
+    </node>
+</launch>
